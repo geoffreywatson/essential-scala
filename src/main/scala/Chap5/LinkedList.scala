@@ -12,6 +12,10 @@ sealed trait LinkedList[A]{
     case Pair(hd, tl) => if(hd == x) true else tl.contains(x)
   }
 
+  def apply(n: Int): Result[A] = this match {
+    case End() => Failure("Index out of bounds")
+    case Pair(hd, tl) => if (n == 0) Success(hd) else tl.apply(n-1)
+  }
 }
 
 final case class End[A]() extends LinkedList[A]
