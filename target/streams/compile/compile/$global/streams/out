@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0m/home/geoff/IdeaProjects/essential-scala/src/main/scala/Chap5/LinkedList.scala:15:46: 'case' expected but identifier found.[0m
+[0m[[0m[31merror[0m] [0m[0m  def apply(n: Int): Result[A] = this match {d[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/geoff/IdeaProjects/essential-scala/src/main/scala/Chap5/LinkedList.scala:18:1: '}' expected.[0m
+[0m[[0m[31merror[0m] [0m[0m    case End() => Failure("Index out of bounds")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/geoff/IdeaProjects/essential-scala/src/main/scala/Chap5/LinkedList.scala:18:5: illegal start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m    case End() => Failure("Index out of bounds")[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/geoff/IdeaProjects/essential-scala/src/main/scala/Chap5/LinkedList.scala:19:5: illegal start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m    case Pair(hd, tl) => if (n == 0) Success(hd) else tl.apply(n-1)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/geoff/IdeaProjects/essential-scala/src/main/scala/Chap5/LinkedList.scala:21:1: eof expected but '}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m

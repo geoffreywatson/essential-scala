@@ -17,7 +17,7 @@ object Main extends App {
   // This should not compile
   // example.contains("not an Int")
 
-  val example3 = Pair(1, Pair(2, Pair(3, End())))
+  val example3 = Pair(1, Pair(2, Pair(3, Pair(4,End()))))
 //  assert(example3(0) == 1)
 //  assert(example3(1) == 2)
 //  assert(example3(2) == 3)
@@ -31,7 +31,16 @@ object Main extends App {
   assert(example3(0) == Success(1))
   assert(example3(1) == Success(2))
   assert(example3(2) == Success(3))
-  assert(example3(3) == Failure("Index out of bounds"))
+  assert(example3(4) == Failure("Index out of bounds"))
+
+  val example4 = Pair("hello", Pair("Geoff", Pair("Watson", End())))
+  assert(example3.fold(0,(x:Int, y:Int) => x + y) == 10)
+  assert(example3.fold(1,(x:Int, y:Int) => x * y) == 24)
+
+  assert(example4.fold("", (x:String,y:String) => y match {
+    case z if z.isEmpty => x + y + "!"
+    case _ => x + ", " + y
+   }) == "hello, Geoff, Watson!")
 
 
 
