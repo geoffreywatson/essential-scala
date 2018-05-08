@@ -36,6 +36,7 @@ object Main extends App {
   val example4 = Pair("hello", Pair("Geoff", Pair("Watson", End())))
   assert(example3.fold(0,(x:Int, y:Int) => x + y) == 10)
   assert(example3.fold(1,(x:Int, y:Int) => x * y) == 24)
+  assert(example3.fold(0,(x, y) => 1 + y) == 4)
 
   assert(example4.fold("", (x:String,y:String) => y match {
     case z if z.isEmpty => x + y + "!"

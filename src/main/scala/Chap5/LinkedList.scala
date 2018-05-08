@@ -24,6 +24,16 @@ sealed trait LinkedList[A]{
     case End() => end
     case Pair(hd, tl) => f(hd, tl.fold(end, f))
   }
+
+  def fold(end:Int, f:(Int, Int) => Int): Int = this match {
+    case End() => end
+    case Pair(hd,tl) => f(hd, tl.fold(end,f))
+  }
+
+  def sum(): Int = fold(0,_+_)
+  def lengthy(): Int = fold(0, (_,_) => 1)
+  def product(): Int = fold(1, _*_)
+  
 }
 
 final case class End[A]() extends LinkedList[A]
